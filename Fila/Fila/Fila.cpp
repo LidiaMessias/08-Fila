@@ -88,13 +88,30 @@ void insere()
 	cin >> novo->valor;
 	novo->prox = NULL;
 
+	if (inicio == NULL) {
+		inicio = novo;
+		fim = novo;
+	}
+
+	else {
+		fim->prox = novo; 
+		fim = novo;
+	}
 
 }
 
 void remove()
 {
+	if (inicio == NULL) {
+		cout << "Lista vazia!" << endl;
+	}
 
-
-
+	else { //proximo do inicio = inicio
+		cout << "Primeiro da fila: " << inicio->valor << endl;
+		NO* paraExcluir = inicio;
+		inicio = inicio->prox;
+		free(paraExcluir);
+	}
+	
 }
 
